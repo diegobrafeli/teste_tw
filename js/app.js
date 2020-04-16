@@ -131,6 +131,8 @@ postBtn.on('click', function() {
 
 });
 
+//Site tutorial
+//https://web.dev/customize-install/
 
 let deferredPrompt;
 let botao_ativado = true;
@@ -141,29 +143,25 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
   // Update UI notify the user they can install the PWA
-  //showInstallPromotion();
-  alert('teste0');
+  showInstallPromotion();
   
   if (botao_ativado) {
     buttonInstall.style.display = 'block';
-    alert('teste1');
   }
 
 });
 
 buttonInstall.addEventListener('click', (e) => {
     // Hide the app provided install promotion
-   // hideMyInstallPromotion();
+    hideMyInstallPromotion();
     // Show the install prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
     deferredPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
         console.log('User accepted the install prompt');
-        alert('teste2');
       } else {
         console.log('User dismissed the install prompt');
-        alert('teste3');
       }
 
       deferredPrompt = null;
@@ -174,7 +172,6 @@ buttonInstall.addEventListener('click', (e) => {
   window.addEventListener('appinstalled', (evt) => {
     botao_ativado = false;
     buttonInstall.style.display = 'none';
-    alert('teste4');
   });
 
   
