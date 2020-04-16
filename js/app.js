@@ -153,7 +153,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 buttonInstall.addEventListener('click', (e) => {
     // Hide the app provided install promotion
-    //hideMyInstallPromotion();
+   // hideMyInstallPromotion();
     // Show the install prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
