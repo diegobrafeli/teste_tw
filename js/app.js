@@ -153,6 +153,7 @@ buttonInstall.addEventListener('click', (e) => {
     deferredPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
         console.log('User accepted the install prompt');
+        buttonInstall.style.display = 'none';
       } else {
         console.log('User dismissed the install prompt');
       }
@@ -160,3 +161,7 @@ buttonInstall.addEventListener('click', (e) => {
       deferredPrompt = null;
     })
   })
+
+  window.addEventListener('appinstalled', (evt) => {
+    alert('Aplicativo instalado com sucesso!');
+  });
