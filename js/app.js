@@ -141,7 +141,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   deferredPrompt = e;
   // Update UI notify the user they can install the PWA
   //showInstallPromotion();
-  buttonInstall.style.display = 'block';
+  buttonInstall.css("display", "block");
 });
 
 /*buttonInstall.addEventListener('click', (e) => {
