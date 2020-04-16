@@ -161,7 +161,13 @@ buttonInstall.addEventListener('click', (e) => {
     })
   })
 
+  function mensagem_temp(){
+    alert('Aplicativo instalado com sucesso!')
+  }
+
   window.addEventListener('appinstalled', (evt) => {
     buttonInstall.style.display = 'none';
-    setInterval(alert('Aplicativo instalado com sucesso!'), 1000);
+    setInterval(mensagem_temp, 3000);
   });
+
+  
