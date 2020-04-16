@@ -143,7 +143,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
   // Update UI notify the user they can install the PWA
-  showInstallPromotion();
+  //showInstallPromotion();
   
   if (botao_ativado) {
     buttonInstall.style.display = 'block';
@@ -153,7 +153,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 buttonInstall.addEventListener('click', (e) => {
     // Hide the app provided install promotion
-    hideMyInstallPromotion();
+    //hideMyInstallPromotion();
     // Show the install prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
