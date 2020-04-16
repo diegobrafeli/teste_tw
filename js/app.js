@@ -142,10 +142,11 @@ window.addEventListener('beforeinstallprompt', (e) => {
   deferredPrompt = e;
   // Update UI notify the user they can install the PWA
   //showInstallPromotion();
-  alert('teste');
+  alert('teste0');
   
   if (botao_ativado) {
     buttonInstall.style.display = 'block';
+    alert('teste1');
   }
 
 });
@@ -159,9 +160,10 @@ buttonInstall.addEventListener('click', (e) => {
     deferredPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
         console.log('User accepted the install prompt');
-        botao_ativado = false;
+        alert('teste2');
       } else {
         console.log('User dismissed the install prompt');
+        alert('teste3');
       }
 
       deferredPrompt = null;
@@ -170,7 +172,9 @@ buttonInstall.addEventListener('click', (e) => {
 
 
   window.addEventListener('appinstalled', (evt) => {
+    botao_ativado = false;
     buttonInstall.style.display = 'none';
+    alert('teste4');
   });
 
   
