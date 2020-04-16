@@ -24,7 +24,7 @@ var txtMensaje  = $('#txtMensaje');
 // El usuario, contiene el ID del héroe seleccionado
 var usuario;
 
-var buttonInstall = $('#btnAdd');
+var buttonInstall = document.getElementById("btnAdd");
 
 
 
@@ -141,12 +141,12 @@ window.addEventListener('beforeinstallprompt', (e) => {
   deferredPrompt = e;
   // Update UI notify the user they can install the PWA
   //showInstallPromotion();
-  buttonInstall.css("display", "block");
+  buttonInstall.style.display = 'block';
 });
 
-/*buttonInstall.addEventListener('click', (e) => {
+buttonInstall.addEventListener('click', (e) => {
     // Hide the app provided install promotion
-    hideMyInstallPromotion();
+   // hideMyInstallPromotion();
     // Show the install prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
@@ -156,5 +156,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
       } else {
         console.log('User dismissed the install prompt');
       }
+
+      deferredPrompt = null;
     })
-  });*/
+  })
