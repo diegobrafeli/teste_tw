@@ -133,6 +133,7 @@ postBtn.on('click', function() {
 
 
 let deferredPrompt;
+let botao_ativado = true;
 
 window.addEventListener('beforeinstallprompt', (e) => {
   // Prevent the mini-infobar from appearing on mobile
@@ -142,7 +143,11 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // Update UI notify the user they can install the PWA
   //showInstallPromotion();
   alert('teste');
-  buttonInstall.style.display = 'block';
+  
+  if (botao_ativado) {
+    buttonInstall.style.display = 'block';
+  }
+
 });
 
 buttonInstall.addEventListener('click', (e) => {
@@ -154,7 +159,7 @@ buttonInstall.addEventListener('click', (e) => {
     deferredPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
         console.log('User accepted the install prompt');
-        buttonInstall.style.display = 'none';
+        botao_ativado = false;
       } else {
         console.log('User dismissed the install prompt');
       }
